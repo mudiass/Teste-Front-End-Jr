@@ -1,0 +1,219 @@
+@use '../../styles/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: $color-bg-white;
+  width: 100%;
+  max-width: 740px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (max-width: $bp-tablet) {
+    padding: 24px 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity $transition-speed ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 36px;
+    align-items: center;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 290px;
+
+    @media (max-width: $bp-tablet) {
+      height: 200px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #3F3F40;
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #041E50;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+  }
+
+  &__description {
+    font-size: 11px;
+    line-height: 1.55;
+    color: #4E4E4E;
+    margin-bottom: 16px;
+  }
+
+  &__details-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: #041E50;
+    text-decoration: none;
+    margin-bottom: 24px;
+    align-self: flex-start;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__action-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #041E50;
+    border-radius: 4px;
+    height: 38px;
+    padding: 0 4px;
+    background-color: #FFFFFF;
+  }
+
+  &__qty-btn {
+    background: none;
+    border: none;
+    color: #041E50;
+    font-size: 18px;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity $transition-speed ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__qty-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-dark;
+    min-width: 28px;
+    text-align: center;
+  }
+
+  &__buy-btn {
+    flex: 1;
+    height: 38px;
+    background-color: #FFC500;
+    color: #271C56;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color $transition-speed ease, transform $transition-speed ease;
+
+    &:hover {
+      background-color: #E5B200;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__toast {
+    margin-top: 14px;
+    padding: 8px 12px;
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.2s ease;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

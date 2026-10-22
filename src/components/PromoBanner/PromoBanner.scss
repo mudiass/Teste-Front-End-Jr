@@ -1,0 +1,91 @@
+@use '../../styles/variables' as *;
+
+.promo-banner {
+  padding: 30px 0;
+  background-color: $color-bg-white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    min-height: 290px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 36px 36px;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0.25) 0%, rgba(10, 10, 15, 0.85) 100%),
+      url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+    box-shadow: $card-shadow;
+    transition: transform $transition-speed ease, box-shadow $transition-speed ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $card-hover-shadow;
+    }
+  }
+
+  &__top-logo {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    z-index: 3;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 65%);
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 320px;
+  }
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  &__btn {
+    display: inline-block;
+    background-color: #FFC500;
+    color: #271C56;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 10px 32px;
+    border-radius: 4px;
+    transition: background-color $transition-speed ease, transform $transition-speed ease;
+
+    &:hover {
+      background-color: #E5B200;
+      transform: translateY(-1px);
+    }
+  }
+}

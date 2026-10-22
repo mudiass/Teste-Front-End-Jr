@@ -1,0 +1,49 @@
+// Econverse Figma Design Tokens
+
+// Primary Brand Colors
+$color-brand-blue: #271C56;        // Deep blue/purple for titles, headers, card CTA
+$color-brand-blue-hover: #1E1543;
+$color-brand-yellow: #FFC500;      // Yellow for hero cta, modal cta, banner cta
+$color-brand-yellow-hover: #E5B200;
+$color-brand-neon: #00E5FF;        // Neon blue accents (Black Friday)
+$color-active-blue: #3442B5;       // Active category & link blue
+
+// Neutral & Background Colors
+$color-dark-purple: #2A1B4E;      // Newsletter background
+$color-bg-white: #FFFFFF;
+$color-bg-light: #F8F8F8;
+$color-bg-gray: #F6F6F6;
+$color-bg-category: #F4F4F4;
+
+// Text Colors
+$color-text: #3F3F40;
+$color-text-dark: #2E2E2E;
+$color-text-body: #3F3F40;
+$color-text-description: #3F3F40;
+$color-text-muted: #808080;
+$color-text-light: #9F9F9F;
+$color-text-price-old: #808080;
+$color-text-price: #2E2E2E;
+$color-text-shipping: #3442B5;
+
+// Borders & Shadows
+$color-border-light: #EBEBEB;
+$color-border-input: #E0E0E0;
+$color-border-tabs: #BDBDBD;
+$card-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+$card-hover-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+$circle-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+// Typography & Geometry
+$font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$transition-speed: 0.25s;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1240px;
+$container-max: 1240px;

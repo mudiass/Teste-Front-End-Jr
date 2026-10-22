@@ -1,31 +1,84 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Econverse – Vaga Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+Projeto desenvolvido como parte do processo seletivo para a vaga de **Desenvolvedor Front-End** na Econverse.
 
-Segue abaixo as instruções para a execução do teste.
+## 🚀 Tecnologias Utilizadas
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+- **React 18** + **TypeScript**
+- **Vite** (bundler)
+- **SASS** (pré-processador CSS)
+- HTML semântico
+- Fetch API (consumo de JSON)
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## 📋 Funcionalidades
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- ✅ Vitrine de produtos consumindo API JSON
+- ✅ Modal com detalhes do produto ao clicar
+- ✅ Banner hero com countdown em tempo real
+- ✅ Navegação por categorias
+- ✅ Layout responsivo (mobile, tablet, desktop)
+- ✅ Boas práticas de SEO (meta tags, OG tags, HTML semântico)
+- ✅ Acessibilidade (ARIA labels, navegação por teclado)
+- ✅ Animações CSS suaves
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## 🛠️ Como Rodar o Projeto
 
-**Boa sorte! ;)**
+### Pré-requisitos
+- Node.js >= 18
+- npm >= 9
+
+### Instalação e execução
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar em modo desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build
+
+# Pré-visualizar o build
+npm run preview
+```
+
+O app estará disponível em `http://localhost:5173`
+
+## 🗂️ Estrutura do Projeto
+
+```
+src/
+├── components/
+│   ├── Banner/          # Hero banner com countdown
+│   ├── Footer/          # Rodapé do site
+│   ├── Header/          # Cabeçalho com navegação
+│   ├── ProductCard/     # Card individual de produto
+│   ├── ProductModal/    # Modal com detalhes do produto
+│   ├── ProductShowcase/ # Vitrine/grid de produtos
+│   └── PromoBanner/     # Banners promocionais secundários
+├── hooks/
+│   └── useProducts.ts   # Hook para buscar produtos da API
+├── services/
+│   └── api.ts           # Serviço de chamada à API
+├── styles/
+│   ├── global.scss      # Reset e estilos globais
+│   └── variables.scss   # Variáveis SASS (cores, fontes, breakpoints)
+├── types/
+│   └── product.ts       # Tipos TypeScript (interfaces)
+├── App.tsx
+└── main.tsx
+```
+
+## 🎨 Decisões de Design
+
+- Paleta de cores baseada no layout Figma (roxo primário `#5c2d91`, dourado `#ffd700`)
+- Tema Black Friday no banner hero (fundo escuro com detalhes dourados)
+- Grid responsivo com 5 colunas no desktop, 2 no mobile
+- Modal com dois painéis: imagem à esquerda, informações à direita
+
+## 📦 API Utilizada
+
+```
+https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
+```

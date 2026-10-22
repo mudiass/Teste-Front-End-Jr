@@ -1,0 +1,221 @@
+@use '../../styles/variables' as *;
+
+.header {
+  background-color: $color-bg-white;
+  width: 100%;
+  position: relative;
+  z-index: 50;
+
+  // 1. Top Bar Guarantees
+  &__top-bar {
+    border-bottom: 1px solid $color-border-light;
+    padding: 8px 0;
+    font-size: 12px;
+    color: $color-text-light;
+  }
+
+  &__top-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    @media (max-width: $bp-tablet) {
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__guarantee-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+
+    span {
+      color: $color-text-muted;
+
+      strong {
+        color: $color-active-blue;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__guarantee-divider {
+    width: 1px;
+    height: 14px;
+    background-color: $color-border-light;
+
+    @media (max-width: $bp-tablet) {
+      display: none;
+    }
+  }
+
+  // 2. Main Header
+  &__main {
+    padding: 16px 0;
+    border-bottom: 1px solid $color-border-light;
+  }
+
+  &__main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: opacity $transition-speed ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__search {
+    flex: 1;
+    max-width: 620px;
+    position: relative;
+
+    input {
+      width: 100%;
+      height: 48px;
+      background-color: $color-bg-gray;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 0 52px 0 20px;
+      font-size: 14px;
+      color: $color-text-dark;
+      outline: none;
+      transition: border-color $transition-speed ease, background-color $transition-speed ease;
+
+      &::placeholder {
+        color: $color-text-light;
+      }
+
+      &:focus {
+        border-color: $color-brand-blue;
+        background-color: $color-bg-white;
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-text-light;
+      padding: 4px;
+      transition: color $transition-speed ease;
+
+      &:hover {
+        color: $color-brand-blue;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-shrink: 0;
+
+    @media (max-width: $bp-tablet) {
+      gap: 16px;
+    }
+  }
+
+  &__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-light;
+    padding: 4px;
+    position: relative;
+    transition: transform $transition-speed ease;
+
+    svg {
+      transition: stroke $transition-speed ease;
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+
+      svg {
+        stroke: $color-brand-blue;
+      }
+    }
+  }
+
+  // 3. Navigation Bar
+  &__nav {
+    border-bottom: 1px solid $color-border-light;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+    .container {
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-width: max-content;
+  }
+
+  &__nav-item {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 4px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: $color-text-muted;
+      position: relative;
+      white-space: nowrap;
+
+      &:hover {
+        color: $color-brand-blue;
+      }
+    }
+
+    &--active a {
+      color: $color-active-blue;
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    &__search {
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    &__search {
+      display: none;
+    }
+
+    &__actions {
+      gap: 12px;
+    }
+  }
+}

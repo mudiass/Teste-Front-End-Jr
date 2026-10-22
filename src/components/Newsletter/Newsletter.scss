@@ -1,0 +1,137 @@
+@use '../../styles/variables' as *;
+
+.newsletter {
+  background-color: #2A1B4E;
+  padding: 44px 0;
+  color: #FFFFFF;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+
+    @media (max-width: $bp-desktop) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
+  &__info {
+    max-width: 440px;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    line-height: 1.25;
+
+    @media (max-width: $bp-mobile) {
+      font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+  }
+
+  &__form-wrapper {
+    flex: 1;
+    max-width: 620px;
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: $bp-tablet) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    height: 44px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #2E2E2E;
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+      color: #9F9F9F;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px $color-brand-yellow;
+    }
+  }
+
+  &__btn {
+    height: 44px;
+    padding: 0 28px;
+    background-color: $color-brand-yellow;
+    color: #271C56;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color $transition-speed ease, transform $transition-speed ease;
+
+    &:hover {
+      background-color: $color-brand-yellow-hover;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: $bp-tablet) {
+      width: 100%;
+    }
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: $color-brand-yellow;
+    }
+  }
+
+  &__success {
+    background-color: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4CAF50;
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: #A5D6A7;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
